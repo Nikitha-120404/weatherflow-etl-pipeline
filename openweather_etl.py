@@ -6,6 +6,20 @@
 #   from the OpenWeatherMap API, transforms it using Python (Pandas + PyJanitor),
 #   and loads it into PostgreSQL for analysis.
 # ======================================================
+# PostgreSQL Table Schema
+# ------------------------------------------------------
+# Run this SQL command in pgAdmin before executing the Python script
+# to create the table used for inserting raw weather data.
+#
+# CREATE TABLE weather_db (
+#     id SERIAL PRIMARY KEY,
+#     city TEXT,
+#     weather TEXT,
+#     temperature FLOAT,
+#     humidity INTEGER,
+#     wind_speed FLOAT,
+#     recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+# );
 
 # ------------------- IMPORTS -------------------
 import requests
@@ -158,3 +172,4 @@ print("Current directory:", os.getcwd())
 # ------------------------------------------------
 
 # END OF SCRIPT
+
