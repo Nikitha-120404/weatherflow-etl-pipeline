@@ -27,7 +27,6 @@ import psycopg2
 import time
 import pandas as pd
 from sqlalchemy import create_engine
-import dtale
 import janitor
 import os
 # ------------------------------------------------
@@ -112,9 +111,6 @@ conn.close()
 
 df = pd.read_sql('SELECT * FROM weather_db;', engine)
 
-d = dtale.show(df)
-d.open_browser()
-
 # Cleaning & Transformation
 humidity_mean = df['humidity'].mean()
 
@@ -172,4 +168,5 @@ print("Current directory:", os.getcwd())
 # ------------------------------------------------
 
 # END OF SCRIPT
+
 
